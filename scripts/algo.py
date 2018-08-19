@@ -35,9 +35,14 @@ class algoritmos():
         X_test_real = X_test_real.drop('Unnamed: 0', axis=1)
         X_test_real = X_test_real.drop('v_0', axis=1)
 
+
         #normalizar los rangos de las variables para no afectar el desempeño del modelo.
-        self.X_train = normalize(X_train_real[['v_1', 'v_4', 'v_5', 'v_8', 'v_9']])
-        self.X_test = normalize(X_test_real[['v_1', 'v_4', 'v_5', 'v_8', 'v_9']])
+        self.X_train = normalize(X_train_real[
+                                     ['v_1','v_2', 'v_4', 'v_5','v_6','v_7', 'v_8', 'v_9', 'activos','pasivo','patrimonio','estado_civil']
+                                 ])
+        self.X_test = normalize(X_test_real[
+                                     ['v_1', 'v_2', 'v_4', 'v_5', 'v_6', 'v_7', 'v_8', 'v_9', 'activos', 'pasivo','patrimonio', 'estado_civil']
+                                ])
         self.X_test_real = X_test_real
         self.X_train_real = X_train_real
 
